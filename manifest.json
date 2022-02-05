@@ -1,0 +1,26 @@
+{
+    "name": "WebShare",
+    "version": "0.1.0",
+    "description": "Shares the current page via the OS sharing API.",
+    "permissions": ["activeTab", "contextMenus"],
+    "browser_action": {
+        "default_icon": {
+            "32": "images/share-square-solid.png"
+        },
+        "default_title": "WebShare"
+    },
+    "background": {
+        "scripts": [ "background.js" ],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+
+            "matches": [ "*://*/*" ],
+            "js": ["content.js"]
+        }],
+    "icons": {
+        "32": "images/share-square-solid.png"
+    },
+    "manifest_version": 2
+}
